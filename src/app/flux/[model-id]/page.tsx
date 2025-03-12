@@ -3,11 +3,11 @@ import { allModels } from "@/lib/models/registry";
 import { notFound } from "next/navigation";
 
 interface Props {
-  params: { "model-id": string } | Promise<{ "model-id": string }>;
+  params: { "model-id": string };
 }
 
 export default async function FluxModelPage({ params }: Props) {
-  const { "model-id": modelId } = await params;
+  const { "model-id": modelId } = params;
   
   // Find the model from our registry
   const model = allModels.find(
